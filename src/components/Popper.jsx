@@ -1,24 +1,38 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 /**
  * This component renders popper at different parts of the website.
  * @param {JSX.Element} children This is the jsx which will be inside this component.
  * @returns It retuns the JSX comes from children wrapped by another div.
  */
-export default function Popper({ children, modalRef }) {
+export default function Popper({
+    children, popperRef, holder, noPopper = false, wrapperProps, ...props
+}) {
+    const wrapperRef = useRef();
+
     useEffect(() => {
-        const usermodalhandler = (e) => {
-            if (modalRef.current && !modalRef.current.contains(e.target)) {
-                modalRef.current.classList.add('hidden');
+        const popperHandler = (e) => {
+            if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
+                popperRef?.current.classList.add('hidden');
             }
-        }
-        document.addEventListener('mousedown', usermodalhandler);
-        return () => document.removeEventListener('mousedown', usermodalhandler);
+        };
+        document.addEventListener('mousedown', popperHandler);
+        return () => document.removeEventListener('mousedown', popperHandler);
     });
 
     return (
-        <div ref={modalRef} className='hidden'>
-            {children}
+        <div
+            ref={wrapperRef}
+            {...wrapperProps}
+        >
+            {holder}
+            {
+                !noPopper && (
+                    <div ref={popperRef} {...props} className='hidden'>
+                        {children}
+                    </div>
+                )
+            }
         </div>
-    )
+    );
 }

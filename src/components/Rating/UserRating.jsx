@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 const UserRating = () => {
     const [userrating, setUserrating] = useState(null);
     const [hover, setHover] = useState(null);
+
+    // sets the value of the rating given by the user.
     const onReview = (rating) => {
         setUserrating(rating)
     }

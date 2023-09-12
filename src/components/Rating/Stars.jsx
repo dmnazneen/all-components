@@ -1,6 +1,12 @@
 import { Star, StarHalf } from 'phosphor-react';
 import React from 'react';
 
+/**
+ * 
+ * @param {Array} stars
+ * @param {String} gap - tailwind css class.
+ * @returns {JSX.Element} - displays the stars
+ */
 const Stars = ({ stars, gap = 'gap-4' }) => {
     return (
         <div className={`flex ${gap} text-golden`}>
