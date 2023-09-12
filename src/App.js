@@ -1,4 +1,4 @@
-import Rating from "./components/Rating";
+import Rating from "./components/Rating/Rating";
 // import Footer from './components/Footer';
 // import TeachersLanding from './components/TeacherLanding'
 // import Timings from './components/Timings'
