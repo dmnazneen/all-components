@@ -1,9 +1,9 @@
+/* eslint-disable react/prop-types */
 import { Star, StarHalf } from 'phosphor-react';
-import React from 'react';
 
 /**
  * 
- * @param {Array} stars
+ * @param {Array} stars - array of stars type 'fill', 'empty', 'half'
  * @param {String} gap - tailwind css class.
  * @returns {JSX.Element} - displays the stars
  */

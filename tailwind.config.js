@@ -8,12 +8,14 @@ module.exports = {
       },
       colors: {
         text_black: '#363636',
-        gray: '#7B7B7B',
-        primary_blue: '#2672E7',
+        greyy: '#7B7B7B',
+        //
+        blue: '#2672E7',
         white: '#FFFFFF',
+        //
         light_gray: '#F8F8FF',
         golden: '#FCA311',
-        barbg: '#D9D9D9'
+        barbg: '#D9D9D9',
       }
     },
   },

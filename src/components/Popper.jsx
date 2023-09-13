@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+/* eslint-disable react/prop-types */
+import { useEffect, useRef } from 'react';
 
 /**
  * This component renders popper at different parts of the website.

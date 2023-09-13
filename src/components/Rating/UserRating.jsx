@@ -1,5 +1,5 @@
 import { Star } from 'phosphor-react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const UserRating = () => {
     const [userrating, setUserrating] = useState(null);

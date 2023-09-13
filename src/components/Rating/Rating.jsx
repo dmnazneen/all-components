@@ -1,7 +1,9 @@
-import React, { useRef } from 'react';
+/* eslint-disable react/prop-types */
+import { useRef } from 'react';
 import HoverDiv from './HoverDiv';
 import Stars from './Stars';
 import Popper from '../Popper';
+//mock data
 const allratings = [4, 2, 3, 4, 5, 5, 5, 5, 5, 4, 5, 5, 4, 3, 5, 5, 5, 5, 5, 5, 5, 4, 5, 4, 3, 5, 5, 5, 5, 5]
 /**
  * Rating Component
@@ -13,6 +15,7 @@ const allratings = [4, 2, 3, 4, 5, 5, 5, 5, 5, 4, 5, 5, 4, 3, 5, 5, 5, 5, 5, 5, 
  * @returns {JSX.Element} - The rating component and the div to submit rating.
  */
 
+// eslint-disable-next-line react/prop-types
 const Rating = ({ ratingsArr = allratings }) => {
     const modalRef = useRef();
     const sum = ratingsArr.reduce((a, b) => a + b, 0);
@@ -34,7 +37,7 @@ const Rating = ({ ratingsArr = allratings }) => {
     }
 
     const stars = getstars(rating);
-    const popperParent = <p className='text-primary_blue cursor-pointer'>{rating} out of 5</p>
+    const popperParent = <p className='text-blue cursor-pointer'>{rating} out of 5</p>
     return (
         <div className='text-text_black'>
             <div className='flex gap-5 items-center'>
@@ -45,10 +48,11 @@ const Rating = ({ ratingsArr = allratings }) => {
                             onMouseOver: () => modalRef?.current.classList.remove('hidden'),
                             onMouseOut: () => modalRef?.current.classList.add('hidden')
                         }}
-                        children={<HoverDiv rating={rating} stars={stars} ratingsArr={ratingsArr} />}
                         holder={popperParent}
                         popperRef={modalRef}
-                    />
+                    >
+                        <HoverDiv rating={rating} stars={stars} ratingsArr={ratingsArr} />
+                    </Popper>
                 </div>
             </div>
         </div >
