@@ -13,7 +13,7 @@ const HoverDiv = ({ rating, stars, ratingsArr, leaveRating = true }) => {
     }
     const info = calcPercent(ratingsArr)
     return (
-        <div className="absolute top-10 -left-36 drop-shadow w-[370px] rounded bg-white before:content-[''] before:absolute before:border-[20px] before:border-y-transparent before:border-l-transparent before:border-r-white before:rotate-90 before:left-[50%] before:-translate-x-1/2 before:-top-10">
+        <div className="w-[370px] rounded bg-white">
             <div className='flex gap-4 items-center px-8 pt-4'>
                 <span className='font-normal text-2xl'>{rating}</span>
                 <Stars stars={stars} gap={'gap-2'} />
